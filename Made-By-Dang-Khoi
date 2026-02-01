@@ -1,0 +1,1237 @@
+repeat 
+  wait() 
+  until game:IsLoaded()
+task.spawn(function()
+-- Library
+_G.RayfieldTheme = "Red"
+local rayfield = loadstring(game:HttpGet("https://raw.githubusercontent.com/Justaverageguym/Hub/main/Ea.lua"))()
+-- Variables
+local ws = game:GetService("Workspace")
+local pls = game:GetService("Players")
+local cl = pls.LocalPlayer
+local rs = game:GetService("RunService")
+local lg = game:GetService("Lighting")
+local cam = ws.CurrentCamera
+
+task.spawn(function()
+local Window = rayfield:CreateWindow({
+   Name = "Universal utmm | https://discord.com/invite/BmKFA5QDCV",
+   LoadingTitle = "Ererererererereeereerrr",
+   LoadingSubtitle = "by Sirius",
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "Big Hub"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "Mr9u7243MQ", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "Nozz method of obtaining the key is provided",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+local items = {weapons = {},foods = {},armors = {},souls = {}} 
+local var = {soul,ssh,sshl,lm,gettool,hitaura,hital,mrt,bf,km = "Instant-kill",smultiv = 6,smulti,afboss,af,afl,godmode,ar,arl,wep,armor,shops = {},shop,bosses = {},boss,oldboss,noatk,ausb,ausbl,remotet = {"Special","Fire"},
+  fontlist = {
+    "Legacy",
+    "Arial",
+    "ArialBold",
+    "SourceSans",
+    "SourceSansBold",
+    "SourceSansSemibold",
+    "Bodoni",
+    "Garamond",
+    "Cartoon",
+    "Code",
+    "Highway",
+    "SciFi",
+    "Arcade",
+    "Fantasy",
+    "Antique",
+    "Gotham",
+    "GothamBold",
+    "GothamBlack",
+    "AmaticSC",
+    "Bangers",
+    "Creepster",
+    "DenkOne",
+    "Fondamento",
+    "Fredericka",
+    "IndieFlower",
+    "JosefinSans",
+    "Jura",
+    "Kalam",
+    "LuckiestGuy",
+    "Merriweather",
+    "Michroma",
+    "Nunito",
+    "Oswald",
+    "PatrickHand",
+    "PermanentMarker",
+    "Roboto",
+    "SpecialElite"}}
+
+function fn(number)
+    local absNumber = math.abs(number)
+    local formattedNumber
+    local suffix = ""
+     
+    if absNumber >= 1e100 then
+        formattedNumber = number / 1e100
+        suffix = "G"   -- Googol (100 zeros)
+    elseif absNumber >= 1e97 then
+        formattedNumber = number / 1e97
+        suffix = "Tg"  -- Tretrigintillion (97 zeros)
+    elseif absNumber >= 1e94 then
+        formattedNumber = number / 1e94
+        suffix = "Dg"  -- Duotrigintillion (94 zeros)
+    elseif absNumber >= 1e91 then
+        formattedNumber = number / 1e91
+        suffix = "Ug"  -- Untrigintillion (91 zeros)
+    elseif absNumber >= 1e88 then
+        formattedNumber = number / 1e88
+        suffix = "Og"  -- Octovigintillion (88 zeros)
+    elseif absNumber >= 1e85 then
+        formattedNumber = number / 1e85
+        suffix = "Sg"  -- Septenvigintillion (85 zeros)
+    elseif absNumber >= 1e82 then
+        formattedNumber = number / 1e82
+        suffix = "sg"  -- Sexvigintillion (82 zeros)
+    elseif absNumber >= 1e79 then
+        formattedNumber = number / 1e79
+        suffix = "Qg"  -- Quinvigintillion (79 zeros)
+    elseif absNumber >= 1e76 then
+        formattedNumber = number / 1e76
+        suffix = "qg"  -- Quattuorvigintillion (76 zeros)
+    elseif absNumber >= 1e73 then
+        formattedNumber = number / 1e73
+        suffix = "Tg"  -- Tresvigintillion (73 zeros)
+    elseif absNumber >= 1e70 then
+        formattedNumber = number / 1e70
+        suffix = "Dg"  -- Duovigintillion (70 zeros)
+    elseif absNumber >= 1e67 then
+        formattedNumber = number / 1e67
+        suffix = "Ug"  -- Unvigintillion (67 zeros)
+    elseif absNumber >= 1e64 then
+        formattedNumber = number / 1e64
+        suffix = "V"  -- Vigintillion (64 zeros)
+    elseif absNumber >= 1e61 then
+        formattedNumber = number / 1e61
+        suffix = "NV"  -- Novemdecillion (61 zeros)
+    elseif absNumber >= 1e58 then
+        formattedNumber = number / 1e58
+        suffix = "OV"  -- Octodecillion (58 zeros)
+    elseif absNumber >= 1e55 then
+        formattedNumber = number / 1e55
+        suffix = "SV"  -- Septendecillion (55 zeros)
+    elseif absNumber >= 1e52 then
+        formattedNumber = number / 1e52
+        suffix = "sV"  -- Sexdecillion (52 zeros)
+    elseif absNumber >= 1e49 then
+        formattedNumber = number / 1e49
+        suffix = "QV"  -- Quindecillion (49 zeros)
+    elseif absNumber >= 1e46 then
+        formattedNumber = number / 1e46
+        suffix = "qV"  -- Quattuordecillion (46 zeros)
+    elseif absNumber >= 1e43 then
+        formattedNumber = number / 1e43
+        suffix = "TV"  -- Tredecillion (43 zeros)
+    elseif absNumber >= 1e40 then
+        formattedNumber = number / 1e40
+        suffix = "DV"  -- Duodecillion (40 zeros)
+    elseif absNumber >= 1e37 then
+        formattedNumber = number / 1e37
+        suffix = "UV"  -- Undecillion (37 zeros)
+    elseif absNumber >= 1e34 then
+        formattedNumber = number / 1e34
+        suffix = "D"  -- Decillion (34 zeros)
+    elseif absNumber >= 1e31 then
+        formattedNumber = number / 1e31
+        suffix = "N"  -- Nonillion (31 zeros)
+    elseif absNumber >= 1e28 then
+        formattedNumber = number / 1e28
+        suffix = "O"  -- Octillion (28 zeros)
+    elseif absNumber >= 1e25 then
+        formattedNumber = number / 1e25
+        suffix = "S"  -- Septillion (25 zeros)
+    elseif absNumber >= 1e22 then
+        formattedNumber = number / 1e22
+        suffix = "s"  -- Sextillion (22 zeros)
+    elseif absNumber >= 1e19 then
+        formattedNumber = number / 1e19
+        suffix = "Q"  -- Quintillion (19 zeros)
+    elseif absNumber >= 1e16 then
+        formattedNumber = number / 1e16
+        suffix = "q"  -- Quadrillion (16 zeros)
+    elseif absNumber >= 1e13 then
+        formattedNumber = number / 1e13
+        suffix = "t"  -- Trillion (13 zeros)
+    elseif absNumber >= 1e10 then
+        formattedNumber = number / 1e10
+        suffix = "B"  -- Billion (10 zeros)
+    elseif absNumber >= 1e7 then
+        formattedNumber = number / 1e7
+        suffix = "M"  -- Million (7 zeros)
+    elseif absNumber >= 1e4 then
+        formattedNumber = number / 1e4
+        suffix = "K"  -- Thousand (4 zeros)
+    else
+        formattedNumber = number
+    end
+
+    if formattedNumber % 1 ~= 0 then
+        formattedNumber = string.format("%.1f", formattedNumber)
+    end
+
+    return formattedNumber .. suffix
+end
+
+local safezonepart = Instance.new("Part")
+safezonepart.Size = Vector3.new(100,2,100)
+safezonepart.Position = Vector3.new(math.random(9999,99999),math.random(9999,99999),math.random(9999,99999))
+safezonepart.CanCollide = true 
+safezonepart.Material = "ForceField"
+safezonepart.Anchored = true
+safezonepart.Transparency = .9 
+safezonepart.Color = Color3.new(1,0,0)
+safezonepart.Parent = ws 
+
+for _,v in next,game:GetService("ReplicatedStorage"):GetChildren() do 
+  if v:IsA("RemoteEvent") and v:FindFirstChild("__FUNCTION") then
+local getinfo = getinfo or debug.getinfo
+local DEBUG = false
+local Hooked = {}
+
+local Detected, Kill
+
+setthreadidentity(2)
+
+for i, v in getgc(true) do
+    if typeof(v) == "table" then
+        local DetectFunc = rawget(v, "Detected")
+        local KillFunc = rawget(v, "Kill")
+    
+        if typeof(DetectFunc) == "function" and not Detected then
+            Detected = DetectFunc
+            
+            local Old; Old = hookfunction(Detected, function(Action, Info, NoCrash)
+                if Action ~= "_" then
+                    if DEBUG then
+                     warn(`Adonis AntiCheat flagged\nMethod: {Action}\nInfo: {Info}`)
+                    end
+                end
+                
+                return true
+            end)
+
+            table.insert(Hooked, Detected)
+        end
+
+        if rawget(v, "Variables") and rawget(v, "Process") and typeof(KillFunc) == "function" and not Kill then
+            Kill = KillFunc
+            local Old; Old = hookfunction(Kill, function(Info)
+                if DEBUG then
+                   warn(`Adonis AntiCheat tried to kill (fallback): {Info}`)
+                end
+            end)
+
+            table.insert(Hooked, Kill)
+        end
+    end
+end
+
+local Old; Old = hookfunction(getrenv().debug.info, newcclosure(function(...)
+    local LevelOrFunc, Info = ...
+
+    if Detected and LevelOrFunc == Detected then
+        if DEBUG then
+       warn(`zins | adonis bypassed`)
+        end
+
+        return coroutine.yield(coroutine.running())
+    end
+    
+    return Old(...)
+end))
+-- setthreadidentity(9)
+setthreadidentity(7)
+  end 
+end
+
+local gameMetaTable = getrawmetatable(game)
+setreadonly(gameMetaTable, false)
+local oldMetaTable = gameMetaTable.__namecall
+local CallingScript = game:GetService("Players").LocalPlayer.PlayerGui.Handler
+
+game.Players.LocalPlayer.PlayerGui.ChildAdded:Connect(function(item)
+    if item.ClassName == "LocalScript" and item.Name == "Handler" then
+        CallingScript = item
+    end
+end)
+
+gameMetaTable.__namecall = newcclosure(function(self, ...)
+    local method = getnamecallmethod()
+    local script = getcallingscript()
+    local args = {...}
+
+    if var.godmode and method == "FireServer" and script == CallingScript  then
+        return nil
+    end
+    return oldMetaTable(self,...)
+end)
+
+task.spawn(function()
+function merge(n)
+  for _,v in next,var.remotet do 
+   if n.Name == v then
+     return true
+    end
+  end
+end
+
+local mt = getrawmetatable(game)
+local old = mt.__namecall
+setreadonly(mt, false)
+
+mt.__namecall = function(uh, ...)
+  local args = {...}
+  local method = getnamecallmethod()
+  if var.smulti and (method == "InvokeServer" or method == "FireServer") and merge(uh) then
+       for i = 1,var.smultiv do
+          old(uh, ...)
+     end
+  end
+  return old(uh, ...)
+end
+
+setreadonly(mt, true)
+end)
+task.spawn(function()
+for _,v in ipairs(lg.Armor:GetChildren()) do 
+ if v:FindFirstChild("Onsale") and v:FindFirstChild("Onsale").Value then
+  table.insert(items.armors,v.ArmorName.Value ..  " | Cost: " .. tostring(fn(v.Cost.Value)) .. " | Hp: " .. tostring(fn(v.HPBonus.Value)))
+ end
+end
+
+for _,v in ipairs(lg.Weapons:GetChildren()) do 
+ if v:FindFirstChild("Onsale") and v:FindFirstChild("Onsale").Value then
+  if v:FindFirstChild("Tool"):FindFirstChildOfClass("Tool"):FindFirstChild("Damage") then
+  table.insert(items.weapons,v.WeaponName.Value .. " | Cost: " .. tostring(fn(v.Cost.Value)) .. " | Dmg: " .. tostring(fn(v.Tool:FindFirstChildOfClass("Tool").Damage.Value)))
+else 
+  table.insert(items.weapons,v.WeaponName.Value .. " | Cost: " .. tostring(fn(v.Cost.Value)) .. " | Dmg: 0")
+  end
+ end
+end
+
+for _,v in ipairs(lg.SOULs:GetChildren()) do 
+ if v:FindFirstChild("Onsale") and v:FindFirstChild("Onsale").Value and (v.Fragments.Value == 0 or v.Fragments == 0)  then
+  table.insert(items.souls,v.SoulName.Value .. " | Cost: " .. tostring(fn(v.Cost.Value)))
+ end
+end
+
+for _,v in ipairs(lg.Food:GetChildren()) do 
+ if v:FindFirstChild("Onsale") and v:FindFirstChild("Onsale").Value then
+  if v:FindFirstChild("Tool"):FindFirstChildOfClass("Tool"):FindFirstChild("Heal") then
+  table.insert(items.foods,v.FoodName.Value .. " | Cost: " .. tostring(fn(v.Cost.Value)) .. " | Heal: " .. tostring(fn(v.Tool:FindFirstChildOfClass("Tool").Heal.Value)))
+else 
+  table.insert(items.foods,v.FoodName.Value .. " | Cost: " .. tostring(fn(v.Cost.Value)) .. " | Heal: 0")
+  end
+ end
+end 
+
+for _,v in ipairs(ws.Shops:GetChildren()) do 
+  if v:IsA("BasePart") then 
+ table.insert(var.shops,v.Name)
+ end
+end
+
+function getitemname(name)
+    for _, v in pairs(lg:GetDescendants()) do
+        if v.Name == name and v:IsA("Folder") then
+            local suc, result = pcall(function()
+                if v:FindFirstChild("WeaponName") then
+                    return v.WeaponName.Value
+                elseif v:FindFirstChild("ArmorName") then
+                    return v.ArmorName.Value
+                elseif v:FindFirstChild("FoodName") then
+                    return v.FoodName.Value
+                elseif v:FindFirstChild("SoulName") then
+                    return v.SoulName.Value
+                end
+            end)
+            if suc then
+                if result ~= nil then
+                    return result
+                end
+            end
+        end
+      end
+    return "None"
+end
+
+for _,v in ipairs(lg.Battles:GetChildren()) do 
+if v:FindFirstChild("BattleName") then
+ if v:FindFirstChild("TrueReset") then
+ if not table.find(var.bosses,v.BattleName.Value .. " | Lv: " .. tostring(fn(v.LOVE.Value)) .. " | RT: " .. tostring(fn(v.Resets.Value)) .. " | TR: " .. tostring(fn(v.TrueReset.Value)) .. " | R: " .. getitemname(tostring(v.RewardWeapon.Value))) then
+ table.insert(var.bosses,v.BattleName.Value .. " | Lv: " .. tostring(fn(v.LOVE.Value)) .. " | RT: " .. tostring(fn(v.Resets.Value)) .. " | TR: " .. tostring(fn(v.TrueReset.Value)) .. " | R: " .. getitemname(tostring(v.RewardWeapon.Value))) 
+ end
+ else 
+ if not table.find(var.bosses,v.BattleName.Value .. " | Lv: " .. tostring(fn(v.LOVE.Value)) .. " | RT: " .. tostring(fn(v.Resets.Value)) .. " | TR: 0" .. " | R: " .. getitemname(tostring(v.RewardWeapon.Value))) then
+ table.insert(var.bosses,v.BattleName.Value .. " | Lv: " .. tostring(fn(v.LOVE.Value)) .. " | RT: " .. tostring(fn(v.Resets.Value)) .. " | TR: 0" .. " | R: " .. getitemname(tostring(v.RewardWeapon.Value))) 
+ end
+ end
+end
+end
+end)
+
+         for _,v in next,lg:GetChildren() do 
+           if v.Name:match("~<>~6999") then 
+             v.Name = v.Name:gsub("~<>~6999","")
+           end
+         end
+
+ws.DescendantAdded:Connect(function(v)
+ spawn(function()
+ if v.Name == "Players" and v:FindFirstChild(cl.Name) and v.Parent:IsA("Model") and v.Parent.Parent:IsA("Folder") and v.Parent.Parent.Name == "Stuff" then 
+   var.bf = v.Parent.Parent
+ v.Parent.Parent.AncestryChanged:Connect(function(_, parent)
+    if not parent then 
+      var.bf = nil
+      end
+    end)
+   end
+ end)
+end)
+
+ws.DescendantRemoving:Connect(function(v)
+  if v.Name == "Stuff" and v:IsA("Folder") then
+    var.bf = nil 
+  end
+end)
+
+ cl.Character.DescendantAdded:Connect(function(v)
+    spawn(function()
+        if v:IsA("TouchTransmitter") and v:IsDescendantOf(cl.Character:FindFirstChildOfClass("Tool")) and v.Parent:IsA("BasePart") then
+            var.gettool = v.Parent
+        end
+    end)
+end)
+
+cl.Character.DescendantRemoving:Connect(function(v)
+    if v:IsA("Tool") then
+        var.gettool = nil
+    end
+end)
+
+cl.CharacterAdded:Connect(function(m)
+    spawn(function()
+        m.DescendantAdded:Connect(function(v)
+            spawn(function()
+                if v:IsA("TouchTransmitter") and v:IsDescendantOf(cl.Character:FindFirstChildOfClass("Tool")) and v.Parent:IsA("BasePart") then
+                    var.gettool = v and v.Parent
+                end
+            end)
+        end)
+        m.DescendantRemoving:Connect(function(v)
+            if v:IsA("Tool") then
+                var.gettool = nil
+            end
+        end)
+    end)
+end)
+
+local Tab = Window:CreateTab("Tab 1", 4483362458) -- Title, Image
+local Toggle = Tab:CreateToggle({
+    Name = "Hit aura",
+    CurrentValue = false,
+    Flag = "hitura", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        var.hitaura = Value
+        if var.hitaura then
+            hital = rs.Stepped:Connect(function()
+                task.spawn(function()
+                    if var.bf and var.gettool then
+                        for _, v in next, var.bf:GetChildren() do
+                            if v:IsA("Model") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChildOfClass("Humanoid") and v:FindFirstChildOfClass("Humanoid").Health > 0 and not v:FindFirstChildOfClass("ForceField") then
+                                firetouchinterest(var.gettool, v:FindFirstChild("HumanoidRootPart"), 0)
+                                firetouchinterest(var.gettool, v:FindFirstChild("HumanoidRootPart"), 1)
+                                cl.Character:FindFirstChildOfClass("Tool"):Activate()
+                            end
+                        end
+                    end
+                end)
+            end)
+        else
+            if hital then
+                hital:Disconnect()
+                hital = nil
+            end
+        end
+    end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Instant-kill",
+   Callback = function()
+  sethiddenproperty(cl, "MaxSimulationRadius", 9e10)
+  sethiddenproperty(cl, "SimulationRadius", 9e10)
+  if var.bf then
+    for _,m in next,var.bf:GetChildren() do 
+     if m:IsA("Model") and m:FindFirstChildOfClass("Humanoid") then 
+     m:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+     end
+    end
+    end
+   end,
+})
+local Toggle = Tab:CreateToggle({
+   Name = "Godmode",
+   CurrentValue = false,
+   Flag = "Godmode", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      var.godmode = Value
+   end,
+})
+local Toggle = Tab:CreateToggle({
+   Name = "No Attacks",
+   CurrentValue = false,
+   Flag = "Noattack", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      var.noatk = Value 
+      if var.noatk then 
+         for _, v in next, lg:GetChildren() do 
+            if v:IsA("BasePart") or v:IsA("Model") then 
+               v.Name = v.Name .. "~<>~6999"
+            end
+            if v.Name == "Assets" or v.Name == "Asset" then 
+               v.Name = v.Name .. "~<>~6999"
+            end
+         end
+      else
+         for _,v in next,lg:GetChildren() do 
+           if v.Name:match("~<>~6999") then 
+             v.Name = v.Name:gsub("~<>~6999","")
+           end
+         end
+      end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Auto-reset",
+   CurrentValue = false,
+   Flag = "E", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   var.ar = Value
+  if var.ar then
+   var.arl = rs.Stepped:Connect(function()
+    task.spawn(function()
+   if cl.Character then
+      lg.Reset:FireServer()
+      end
+     end)
+   end)
+  else 
+   if var.arl then 
+     var.arl:Disconnect() 
+     var.arl = nil
+     end
+    end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "Summon multiplier",
+   CurrentValue = false,
+   Flag = "Summonmulti", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      var.smulti = Value
+   end,
+})
+local Input = Tab:CreateInput({
+   Name = "Multi",
+   PlaceholderText = "5",
+   RemoveTextAfterFocusLost = false,
+   Callback = function(Text)
+     var.smultiv = tonumber(Text)
+     game:GetService("NetworkClient"):SetOutgoingKBPSLimit(math.huge)
+   end,
+})
+if var.bosses ~= {} then
+local Section = Tab:CreateSection("Autofarm")
+if game.PlaceId == 8994821677 then
+   for _,v in next,ws:GetDescendants() do
+     if v.Name == "BattleInfoGui" and v:FindFirstChild("MonsterName") and v:FindFirstChild("MonsterName").Text == "The secrets" and v.Parent:IsA("BasePart") then
+      var.afboss = v.Parent
+     end
+   end
+local Toggle = Tab:CreateToggle({
+   Name = "Stop autofarm if max resets",
+   CurrentValue = false,
+   Flag = "Stopautofarm", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      var.mrt = Value
+   end,
+})
+local Toggle = Tab:CreateToggle({
+   Name = "Autofarm",
+   CurrentValue = false,
+   Flag = "Autofarm", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    var.af = Value
+   if var.af then 
+    var.afl = rs.Stepped:Connect(function()
+    task.spawn(function()
+     if cl.Character and cl.Character:FindFirstChild("HumanoidRootPart") then 
+     if var.mrt then
+                   if not cl.Character:FindFirstChild("_battle") and cl.LOVE.Value >= 100 and cl.Resets.Value < 20 then
+                        lg.Reset:FireServer()
+                        end
+                   else 
+                    if not cl.Character:FindFirstChild("_battle") and cl.LOVE.Value >= 100 then
+                        lg.Reset:FireServer()
+                        end
+     end
+               
+      if not cl.Character:FindFirstChild("_battle") and cl.LOVE.Value < 100 then
+     task.wait(1.5)
+    if cl.Character and cl.Character:FindFirstChild("HumanoidRootPart") then 
+     firetouchinterest(var.afboss,cl.Character:FindFirstChild("HumanoidRootPart"),0)
+     firetouchinterest(var.afboss,cl.Character:FindFirstChild("HumanoidRootPart"),1)
+    end
+    else 
+       sethiddenproperty(cl, "MaxSimulationRadius", 9e10)
+       sethiddenproperty(cl, "SimulationRadius", 9e10)
+        for _,m in next,var.bf:GetChildren() do 
+         if m:IsA("Model") and m:FindFirstChildOfClass("Humanoid") then 
+         m:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+       end
+       end
+      end
+     if cl:FindFirstChild("PlayerGui") and cl.PlayerGui:FindFirstChild("InviteGUI"):FindFirstChild("Frame").Visible == true then
+       firesignal(cl.PlayerGui:FindFirstChild("InviteGUI"):FindFirstChild("Frame"):FindFirstChild("Go").MouseButton1Click)
+     end
+      end
+      end)
+    end)
+   else 
+     if var.afl then 
+       var.afl:Disconnect() 
+       var.afl = nil 
+     end
+    end
+   end,
+})
+elseif game.PlaceId == 16058546800 then
+   for _,v in next,ws:GetDescendants() do
+     if v.Name == "BattleInfoGui" and v:FindFirstChild("MonsterName") and v:FindFirstChild("MonsterName").Text == "1000 Visits Dummy" and v.Parent:IsA("BasePart") then
+      var.afboss = v.Parent
+     end
+     if v.Name == "BattleInfoGui" and v:FindFirstChild("MonsterName") and v:FindFirstChild("MonsterName").Text == "Nightmare" and v.Parent:IsA("BasePart") then
+     var.afbosse = v.Parent
+     end
+   end
+local Toggle = Tab:CreateToggle({
+   Name = "Stop autofarm if max resets",
+   CurrentValue = false,
+   Flag = "Stopautofarm", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      var.mrt = Value
+   end,
+})
+local Toggle = Tab:CreateToggle({
+   Name = "Autofarm",
+   CurrentValue = false,
+   Flag = "Autofarm", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    var.af = Value
+   if var.af then 
+    var.afl = rs.Stepped:Connect(function()
+    task.spawn(function()
+     if cl.Character and cl.Character:FindFirstChild("HumanoidRootPart") then 
+     
+     if var.mrt then
+       if not cl.Character:FindFirstChild("_battle") and cl.LOVE.Value >= 100 and cl.Resets.Value < 99 then
+            lg.Reset:FireServer()
+            end
+       else 
+        if not cl.Character:FindFirstChild("_battle") and cl.LOVE.Value >= 100 then
+            lg.Reset:FireServer()
+            end
+     end
+     
+      if not cl.Character:FindFirstChild("_battle") then
+     task.wait(1.4)
+    if cl.Character and cl.Character:FindFirstChild("HumanoidRootPart") then 
+     if cl.LOVE.Value < 100 then
+     firetouchinterest(var.afboss,cl.Character:FindFirstChild("HumanoidRootPart"),0)
+     firetouchinterest(var.afboss,cl.Character:FindFirstChild("HumanoidRootPart"),1)
+     else 
+       if cl.Gold.Value < 100000 then 
+     firetouchinterest(var.afbosse,cl.Character:FindFirstChild("HumanoidRootPart"),0)
+     firetouchinterest(var.afbosse,cl.Character:FindFirstChild("HumanoidRootPart"),1)
+       end
+     end
+    end
+    else 
+                                if cl.Character and not cl.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("HEHEHJSJSKSJSJK") then
+                                    for _, v in next, cl.Character:GetChildren() do
+                                        if v:IsA("BasePart") then
+                                            v.CustomPhysicalProperties = PhysicalProperties.new(math.huge, 0.3, 0.5)
+                                            v.CanCollide = false
+                                            v.Massless = true
+                                            v.Velocity = Vector3.new(0, 0, 0)
+                                        end
+                                    end
+                                    local bambam = Instance.new("BodyAngularVelocity")
+                                    bambam.Name = "HEHEHJSJSKSJSJK"
+                                    bambam.Parent = cl.Character:FindFirstChild("HumanoidRootPart")
+                                    bambam.AngularVelocity = Vector3.new(0,25000, 0)
+                                    bambam.MaxTorque = Vector3.new(0, math.huge, 0)
+                                    bambam.P = math.huge
+                                else
+                                            for _, z in next,var.bf:GetChildren() do
+                                                if z:IsA("Model") and z:FindFirstChildOfClass("Humanoid") and z:FindFirstChild("HumanoidRootPart") and z:FindFirstChildOfClass("Humanoid").Health > 0 then
+                                                  if cam.CameraSubject ~= z then 
+                                                    cam.CameraSubject = z 
+                                                 end
+                                                    if z:FindFirstChildOfClass("Humanoid").FloorMaterial ~= Enum.Material.Air then
+                                                        cl.Character:FindFirstChild("HumanoidRootPart").Anchored = false
+                                                     task.delay(1.5,function()
+                                                        cl.Character:FindFirstChild("HumanoidRootPart").CFrame = z:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0,2,0)
+                                                     end)
+                                                    else
+                                                        cl.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(9999,9999,9999)                                         
+                                                        cl.Character:FindFirstChild("HumanoidRootPart").Anchored = true
+                                            end
+                                        end 
+                                    end
+                                end
+                                      for _, v in next, cl.Character:GetChildren() do
+                                        if v:IsA("BasePart") and v.CanCollide == true then
+                                            v.CanCollide = false
+                                            v.Massless = true
+                                  end
+                               end
+      end
+     if cl:FindFirstChild("PlayerGui") and cl.PlayerGui:FindFirstChild("InviteGUI"):FindFirstChild("Frame").Visible == true then
+       firesignal(cl.PlayerGui:FindFirstChild("InviteGUI"):FindFirstChild("Frame"):FindFirstChild("Go").MouseButton1Click)
+     end
+      end
+      end)
+    end)
+   else 
+     if var.afl then 
+       var.afl:Disconnect() 
+       var.afl = nil 
+     end
+    end
+   end,
+})
+
+elseif game.PlaceId == 16770754802 then
+   for _,v in next,ws:GetDescendants() do
+     if v.Name == "BattleInfoGui" and v:FindFirstChild("MonsterName") and v:FindFirstChild("MonsterName").Text == "XP Grind Dummy" and v.Parent:IsA("BasePart") then
+      var.afboss = v.Parent
+     end
+     if v.Name == "BattleInfoGui" and v:FindFirstChild("MonsterName") and v:FindFirstChild("MonsterName").Text == "VIP GOLD Grind Dummy" and v.Parent:IsA("BasePart") then
+     var.afbosse = v.Parent
+     end
+   end
+local Toggle = Tab:CreateToggle({
+   Name = "Stop autofarm if max resets",
+   CurrentValue = false,
+   Flag = "Stopautofarm", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      var.mrt = Value
+   end,
+})
+local Toggle = Tab:CreateToggle({
+   Name = "Autofarm",
+   CurrentValue = false,
+   Flag = "Autofarm", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    var.af = Value
+   if var.af then 
+    var.afl = rs.Stepped:Connect(function()
+    task.spawn(function()
+     if cl.Character and cl.Character:FindFirstChild("HumanoidRootPart") then 
+
+     if var.mrt then
+       if not cl.Character:FindFirstChild("_battle") and cl.LOVE.Value >= 100 and cl.Resets.Value < 20 then
+            lg.Reset:FireServer()
+            end
+       else 
+        if not cl.Character:FindFirstChild("_battle") and cl.LOVE.Value >= 100 then
+            lg.Reset:FireServer()
+            end
+     end
+     
+      if not cl.Character:FindFirstChild("_battle") then
+     task.wait(1.4)
+    if cl.Character and cl.Character:FindFirstChild("HumanoidRootPart") then 
+     if cl.LOVE.Value < 100 then
+     local args = {
+         [1] = game:GetService("Lighting").Weapons.Stick
+     }
+     
+     game:GetService("Lighting").UseWeapon:FireServer(unpack(args))
+     firetouchinterest(var.afboss,cl.Character:FindFirstChild("HumanoidRootPart"),0)
+     firetouchinterest(var.afboss,cl.Character:FindFirstChild("HumanoidRootPart"),1)
+     else 
+       if cl.Gold.Value < 100000 then 
+     firetouchinterest(var.afbosse,cl.Character:FindFirstChild("HumanoidRootPart"),0)
+     firetouchinterest(var.afbosse,cl.Character:FindFirstChild("HumanoidRootPart"),1)
+       end
+     end
+    end
+    else 
+                if cl.Character and cl.Character:FindFirstChildOfClass("Tool") then
+                    if var.bf and var.gettool then
+                        for _, v in next, var.bf:GetChildren() do
+                            if v:IsA("Model") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChildOfClass("Humanoid") and v:FindFirstChildOfClass("Humanoid").Health > 0 and not v:FindFirstChildOfClass("ForceField") then
+                                firetouchinterest(var.gettool, v:FindFirstChild("HumanoidRootPart"), 0)
+                                firetouchinterest(var.gettool, v:FindFirstChild("HumanoidRootPart"), 1)
+                                cl.Character:FindFirstChildOfClass("Tool"):Activate()
+                            end
+                        end
+                    end
+                  else
+                    if cl.Backpack then 
+                   for _,v in next,cl.Backpack:GetChildren() do 
+                     if v:IsA("Tool") and v:FindFirstChild("Damage") then
+                    v.Parent = cl.Character
+                    break 
+                  end
+                  end
+                    end
+                 end
+      end
+      
+     if cl:FindFirstChild("PlayerGui") and cl.PlayerGui:FindFirstChild("InviteGUI"):FindFirstChild("Frame").Visible == true then
+       firesignal(cl.PlayerGui:FindFirstChild("InviteGUI"):FindFirstChild("Frame"):FindFirstChild("Go").MouseButton1Click)
+     end
+     end
+      end)
+    end)
+   else 
+     if var.afl then 
+       var.afl:Disconnect() 
+       var.afl = nil 
+     end
+    end
+   end,
+})
+end
+function notify(title,content,image)
+rayfield:Notify({
+   Title = title,
+   Content = content,
+   Duration = 3,
+   Image = image,
+})
+end
+local Dropdown = Tab:CreateDropdown({
+   Name = "Bosses list",
+   Options = var.bosses,
+   CurrentOption = "None",  
+   Flag = "Dropdown4", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+     local splitname = string.split(Option, " | ")[1]
+     local reward = string.split(Option," | R: ")[2]
+     var.oldboss = false
+   for _,v in next,ws:GetDescendants() do
+     if v.Name == "BattleInfoGui" and v:FindFirstChild("MonsterName") and v:FindFirstChild("MonsterName").Text == splitname and v.Parent:IsA("BasePart") then
+      var.boss = v.Parent
+       var.oldboss = true 
+       break
+     end
+   end
+  if not var.oldboss then 
+  notify("Error","The battle does not exist!",4458873815)
+    end
+   end,
+})  
+local Button = Tab:CreateButton({
+   Name = "Fight selected boss",
+   Callback = function()
+    task.spawn(function()
+     firetouchinterest(var.boss,cl.Character:FindFirstChild("HumanoidRootPart"),0)
+     firetouchinterest(var.boss,cl.Character:FindFirstChild("HumanoidRootPart"),1)
+    end)
+   end,
+})
+
+local Dropdown = Tab:CreateDropdown({
+   Name = "Kill method",
+   Options = {"Hit-aura","Instant-kill","Fling"},
+   CurrentOption = "Instant-kill",
+   MultipleOptions = false,
+   Flag = "Dropdown7", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+     var.km = Option
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+    Name = "Autofarm selected boss",
+    CurrentValue = false,
+    Flag = "AutofarmSb", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+    Callback = function(Value)
+        var.ausb = Value
+        if var.ausb then 
+            var.ausbl = rs.Stepped:Connect(function()
+                task.spawn(function()
+                    if cl.Character and cl.Character:FindFirstChild("HumanoidRootPart") then
+                        if not cl.Character:FindFirstChild("_battle") then
+                            if cl.Character and cl.Character:FindFirstChild("HumanoidRootPart") then
+                                firetouchinterest(var.boss, cl.Character:FindFirstChild("HumanoidRootPart"), 0)
+                                firetouchinterest(var.boss, cl.Character:FindFirstChild("HumanoidRootPart"), 1)
+                            end
+                        else
+                            if var.km == "Instant-kill" then
+                                sethiddenproperty(cl, "MaxSimulationRadius", 9e10)
+                                sethiddenproperty(cl, "SimulationRadius", 9e10)
+                                        for _, m in next, var.bf:GetChildren() do
+                                            if m:IsA("Model") and m:FindFirstChildOfClass("Humanoid") then
+                                                m:FindFirstChildOfClass("Humanoid"):ChangeState(Enum.HumanoidStateType.Dead)
+                                            end
+                                        end
+                            elseif var.km == "Hit-aura" then 
+                  if cl.Character and cl.Character:FindFirstChildOfClass("Tool") then
+                    if var.bf and var.gettool then
+                        for _, v in next, var.bf:GetChildren() do
+                            if v:IsA("Model") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChildOfClass("Humanoid") and v:FindFirstChildOfClass("Humanoid").Health > 0 and not v:FindFirstChildOfClass("ForceField") then
+                              cl.Character:FindFirstChild("HumanoidRootPart").CFrame = safezonepart.CFrame + Vector3.new(0,3,0)
+                              cam.CameraSubject = v
+                                firetouchinterest(var.gettool, v:FindFirstChild("HumanoidRootPart"), 0)
+                                firetouchinterest(var.gettool, v:FindFirstChild("HumanoidRootPart"), 1)
+                                cl.Character:FindFirstChildOfClass("Tool"):Activate()
+                            end
+                        end
+                    end
+                  else
+                    if cl.Backpack then 
+                   for _,v in next,cl.Backpack:GetChildren() do 
+                     if v:IsA("Tool") and v:FindFirstChild("Damage") then
+                    v.Parent = cl.Character
+                    break 
+                  end
+                  end
+                    end
+                 end
+                            else
+                                if cl.Character and not cl.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("HEHEHJSJSKSJSJK") then
+                                    for _, v in next, cl.Character:GetChildren() do
+                                        if v:IsA("BasePart") then
+                                            v.CustomPhysicalProperties = PhysicalProperties.new(math.huge, 0.3, 0.5)
+                                            v.CanCollide = false
+                                            v.Massless = true
+                                            v.Velocity = Vector3.new(0, 0, 0)
+                                        end
+                                    end
+                                    local bambam = Instance.new("BodyAngularVelocity")
+                                    bambam.Name = "HEHEHJSJSKSJSJK"
+                                    bambam.Parent = cl.Character:FindFirstChild("HumanoidRootPart")
+                                    bambam.AngularVelocity = Vector3.new(0,79000, 0)
+                                    bambam.MaxTorque = Vector3.new(0, math.huge, 0)
+                                    bambam.P = math.huge
+                                else
+                                            for _, z in next,var.bf:GetChildren() do
+                                                if z:IsA("Model") and z:FindFirstChildOfClass("Humanoid") and z:FindFirstChild("HumanoidRootPart") and z:FindFirstChildOfClass("Humanoid").Health > 0 then
+                                                  if cam.CameraSubject ~= z then 
+                                                    cam.CameraSubject = z 
+                                                 end
+                                                    if z:FindFirstChildOfClass("Humanoid").FloorMaterial ~= Enum.Material.Air then
+                                                        cl.Character:FindFirstChild("HumanoidRootPart").Anchored = false
+                                                     task.delay(1.5,function()
+                                                        cl.Character:FindFirstChild("HumanoidRootPart").CFrame = z:FindFirstChild("HumanoidRootPart").CFrame + Vector3.new(0,2,0)
+                                                     end)
+                                                    else
+                                                        cl.Character:FindFirstChild("HumanoidRootPart").CFrame = CFrame.new(9999,9999,9999)                                         
+                                                        cl.Character:FindFirstChild("HumanoidRootPart").Anchored = true
+                                            end
+                                        end
+                                    end
+                                end
+                                      for _, v in next, cl.Character:GetChildren() do
+                                        if v:IsA("BasePart") and v.CanCollide == true then
+                                            v.CanCollide = false
+                                            v.Massless = true
+                                  end
+                               end
+                            end
+                        end
+                          if cl:FindFirstChild("PlayerGui") and cl.PlayerGui:FindFirstChild("InviteGUI"):FindFirstChild("Frame").Visible == true then
+                            firesignal(cl.PlayerGui:FindFirstChild("InviteGUI"):FindFirstChild("Frame"):FindFirstChild("Go").MouseButton1Click)
+                       end
+                    end
+                end)
+            end)
+        else
+            if var.ausbl then
+                var.ausbl:Disconnect()
+                var.ausbl = nil
+            end
+        end
+    end,
+})
+end
+local Section = Tab:CreateSection("Misc")
+local Button = Tab:CreateButton({
+   Name = "Unlock locked areas",
+   Callback = function()
+  for _,v in next,ws:GetDescendants() do
+    if (v.Name:lower() == "requirepart" or v.Name:lower() == "lockpart") and v:IsA("BasePart") then
+    v:Destroy()
+   end
+   end
+   end,
+})
+if cl:FindFirstChild("Font") then
+local Dropdown = Tab:CreateDropdown({
+   Name = "Client message font changer",
+   Options = var.fontlist,
+   CurrentOption = "Arcade",
+   MultipleOptions = false,
+   Flag = "Dropdown6", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+     cl.Font.Value = Option
+   end,
+})
+end
+if cl:FindFirstChild("Voice") then 
+local Input = Tab:CreateInput({
+   Name = "Client message sound changer",
+   PlaceholderText = tostring(cl.Voice.Value),
+   RemoveTextAfterFocusLost = true,
+   Callback = function(Text)
+    cl.Voice.Value = tonumber(Text)
+   end,
+})
+end
+local Tab = Window:CreateTab("Items/shop", 4483362458) 
+local Section = Tab:CreateSection("Shops")
+local Dropdown = Tab:CreateDropdown({
+   Name = "Shops list",
+   Options = var.shops,
+   CurrentOption = "None",
+   Flag = "Dropdown5", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+   
+    var.shop = Option
+   end,
+})
+local Toggle = Tab:CreateToggle({
+   Name = "Show selected shop gui",
+   CurrentValue = false,
+   Flag = "dhow", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+      var.ssh = Value
+    if var.ssh then 
+  var.sshl = rs.Stepped:Connect(function()
+   task.spawn(function()
+    if var.shop then 
+           for _,v in next,ws.Shops:GetChildren() do 
+             if v.Name == var.shop and cl.Character then 
+            firetouchinterest(v,cl.Character:FindFirstChild("HumanoidRootPart"),0)
+             end
+             if v.Name ~= var.shop and cl.Character then 
+                        firetouchinterest(v,cl.Character:FindFirstChild("HumanoidRootPart"),1)
+            end
+           end
+         end
+      end)
+  end) 
+   else
+     for _,v in next,ws.Shops:GetChildren() do 
+       firetouchinterest(v,cl.Character:FindFirstChild("HumanoidRootPart"),1)
+     end
+    if var.sshl then 
+      var.sshl:Disconnect() 
+      var.sshl = nil
+     end
+    end
+   end,
+})
+local Section = Tab:CreateSection("Items")
+local Button = Tab:CreateButton({
+   Name = "Buys all the free/cheap stuff",
+   Callback = function()
+     task.spawn(function()
+for _,v in ipairs(lg.Armor:GetChildren()) do 
+ if v:FindFirstChild("Cost") and v:FindFirstChild("Cost").Value <= 10000 then
+   local args = {
+    [1] = v,
+    [2] = "Armor"
+}
+
+lg.Buy:FireServer(unpack(args))
+ end
+end
+
+for _,v in ipairs(lg.Weapons:GetChildren()) do 
+ if v:FindFirstChild("Cost") and v:FindFirstChild("Cost").Value <= 10000 then
+  local args = {
+    [1] = v,
+    [2] = "Weapon"
+}
+
+lg.Buy:FireServer(unpack(args))
+ end
+end
+
+for _,v in ipairs(lg.SOULs:GetChildren()) do 
+if v:FindFirstChild("Cost") and v:FindFirstChild("Cost").Value <= 10000 and (v.Fragments.Value == 0 or v.Fragments == 0)  then
+   local args = {
+    [1] = v,
+    [2] = "SOUL"
+}
+
+lg.Buy:FireServer(unpack(args))
+end
+end
+
+for _,v in ipairs(lg.Food:GetChildren()) do 
+ if v:FindFirstChild("Cost") and v:FindFirstChild("Cost").Value <= 10000 then
+  local args = {
+    [1] = v,
+    [2] = "Food"
+}
+
+lg.Buy:FireServer(unpack(args))
+ end
+end
+    end)
+   end,
+})
+if items.weapons ~= {} then
+local Dropdown = Tab:CreateDropdown({
+   Name = "Weapons list",
+   Options = items.weapons,
+   CurrentOption = "None",
+   Flag = "Dropdown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+    var.wep = string.split(Option, " | ")[1]
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Buy selected wep",
+   Callback = function()
+     task.spawn(function()
+for _,v in ipairs(lg.Weapons:GetChildren()) do 
+ if v.Onsale.Value then 
+   if v.WeaponName.Value == var.wep then
+  local args = {
+    [1] = v,
+    [2] = "Weapon"
+}
+
+lg.Buy:FireServer(unpack(args))
+ end
+end
+end
+    end)
+   end,
+})
+end
+if items.armors ~= {} then
+local Dropdown = Tab:CreateDropdown({
+   Name = "Armors list",
+   Options = items.armors,
+   CurrentOption = "None",
+   Flag = "Dropdown2", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+    var.armor = string.split(Option, " | ")[1]
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Buy selected armor",
+   Callback = function()
+     task.spawn(function()
+for _,v in ipairs(lg.Armor:GetChildren()) do 
+ if v.Onsale.Value then 
+   if v.ArmorName.Value == var.armor then
+  local args = {
+    [1] = v,
+    [2] = "Armor"
+}
+
+lg.Buy:FireServer(unpack(args))
+ end
+end
+end
+    end)
+   end,
+})
+end 
+if items.foods ~= {} then
+local Dropdown = Tab:CreateDropdown({
+   Name = "Foods list",
+   Options = items.foods,
+   CurrentOption = "None",
+   Flag = "Dropdown3", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+    var.food = string.split(Option, " | ")[1]
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Buy selected food",
+   Callback = function()
+     task.spawn(function()
+for _,v in ipairs(lg.Food:GetChildren()) do 
+ if v.Onsale.Value then 
+   if v.FoodName.Value == var.food then
+  local args = {
+    [1] = v,
+    [2] = "Food"
+}
+
+lg.Buy:FireServer(unpack(args))
+ end
+end
+end
+    end)
+   end,
+})
+end
+if items.souls ~= {} then 
+local Dropdown = Tab:CreateDropdown({
+   Name = "Souls list",
+   Options = items.souls,
+   CurrentOption = "None",
+   Flag = "Dropdown9", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Option)
+    var.soul = string.split(Option, " | ")[1]
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Buy selected soul",
+   Callback = function()
+     task.spawn(function()
+for _,v in ipairs(lg.SOULs:GetChildren()) do 
+if v:FindFirstChild("Cost") then
+   local args = {
+    [1] = var.soul,
+    [2] = "SOUL"
+}
+
+lg.Buy:FireServer(unpack(args))
+end
+end
+    end)
+   end,
+})
+end
+ end)
+end)
+
